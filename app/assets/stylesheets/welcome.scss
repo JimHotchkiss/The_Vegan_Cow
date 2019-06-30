@@ -1,3 +1,49 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+#header {
+  background-color: #F5F5F5;
+  position: fixed;
+  width: 100%;
+}
+
+.col {
+  display: inline-block;
+  width: 49%;
+}
+
+// .clearfix fixes the float issue
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+}
+
+#logo_the {
+  color: red;
+}
+
+#category_padding {
+  padding-top: 100px;
+}
+
+img {
+  width: 100%;
+}
+
+#breakfast_img .img_text {
+  z-index: 999;
+}
