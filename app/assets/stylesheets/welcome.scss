@@ -11,15 +11,12 @@ body {
   line-height: 1.5;
 }
 
-#header {
+
+.topnav {
+  overflow: hidden;
   background-color: #F5F5F5;
   position: fixed;
   width: 100%;
-}
-
-.col {
-  display: inline-block;
-  width: 49%;
 }
 
 // .clearfix fixes the float issue
@@ -30,6 +27,34 @@ body {
     visibility: hidden;
     height: 0;
     line-height: 0;
+}
+
+.topnav a {
+  float: left;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  transition: background-color 0.5s ease;
+  color: black;
+}
+
+.topnav a.active {
+  color: black;
+}
+
+.col {
+  display: inline-block;
+  width: 40%;
+}
+
+#logo-nav {
+  padding-top: 2px;
 }
 
 .categories {
@@ -45,28 +70,28 @@ body {
 }
 
 #lunch_img {
-  background-image: url("/assets/breakfast.jpg");
+  background-image: url("/assets/lunch.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 #dinner_img {
-  background-image: url("/assets/breakfast.jpg");
+  background-image: url("/assets/dinner.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 #salad_sides_img {
-  background-image: url("/assets/breakfast.jpg");
+  background-image: url("/assets/salads_sides.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 #desserts_img {
-  background-image: url("/assets/breakfast.jpg");
+  background-image: url("/assets/desserts.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -77,5 +102,6 @@ body {
 }
 
 #category_padding {
-  padding-top: 95px;
+  padding-top: 75px;
+  padding-bottom: 15px;
 }
