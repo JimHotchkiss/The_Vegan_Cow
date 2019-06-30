@@ -32,18 +32,50 @@ body {
     line-height: 0;
 }
 
+.categories {
+  width: 100%;
+  height: 100vh;
+}
+
+#breakfast_img {
+  background-image: url("/assets/breakfast.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#lunch_img {
+  background-image: url("/assets/breakfast.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#dinner_img {
+  background-image: url("/assets/breakfast.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#salad_sides_img {
+  background-image: url("/assets/breakfast.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#desserts_img {
+  background-image: url("/assets/breakfast.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
 #logo_the {
   color: red;
 }
 
 #category_padding {
-  padding-top: 100px;
-}
-
-img {
-  width: 100%;
-}
-
-#breakfast_img .img_text {
-  z-index: 999;
+  padding-top: 95px;
 }
