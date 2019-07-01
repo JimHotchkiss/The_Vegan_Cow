@@ -11,7 +11,6 @@ body {
   line-height: 1.5;
 }
 
-
 .topnav {
   overflow: hidden;
   background-color: #F5F5F5;
@@ -35,11 +34,10 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
   transition: background-color 0.5s ease;
   color: black;
 }
@@ -53,8 +51,19 @@ body {
   width: 40%;
 }
 
-#logo-nav {
-  padding-top: 2px;
+a#logo-link {
+  position: absolute;
+  right: 575px;
+  color: black;
+  font-weight: 600;
+  span#logo_the {
+    color: red;
+    font-weight: 100;
+  }
+  span#cow {
+    color: #8B4513;
+
+  }
 }
 
 .categories {
@@ -62,46 +71,47 @@ body {
   height: 100vh;
 }
 
-#breakfast_img {
-  background-image: url("/assets/breakfast.jpg");
+.img-css {
   background-size: cover;
   width: 100%;
   height: 100%;
 }
 
+#breakfast_img {
+  background-image: url("/assets/breakfast.jpg");
+}
+
 #lunch_img {
-  background-image: url("/assets/lunch.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+  background-image: url("/assets/lunch4.jpg");
 }
 
 #dinner_img {
   background-image: url("/assets/dinner.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
 }
 
 #salad_sides_img {
-  background-image: url("/assets/salads_sides.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+  background-image: url("/assets/salad1.jpg");
 }
 
 #desserts_img {
   background-image: url("/assets/desserts.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
-
-#logo_the {
-  color: red;
 }
 
 #category_padding {
-  padding-top: 75px;
+  padding-top: 60px;
   padding-bottom: 15px;
+}
+
+.meal_lable a {
+  text-decoration: none;
+  padding-top: 200px;
+}
+
+.img-text{
+  font-size: 25px;
+  position: relative;
+  left: 100px;
+  top: 100px;
+  color: red;
+
 }
