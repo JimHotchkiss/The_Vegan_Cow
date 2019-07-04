@@ -167,3 +167,28 @@ a#logo-link {
     </div>
   </div>
 </div>
+
+
+//// JavaScript
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+// () - Anonymous Function
+const navSlide = () => {
+  // Here we'll grab burger and slider (nav-links)
+    const burger = document.getElementsByClassName('.burger');
+    const nav = document.getElementsByClassName('.nav-links');
+
+    // When we click on the menu, we want the berger to get the class of nav-active
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+    });
+}
+
+navSlide();
+
+
+!!!!! The only way to get the JavaScript to work, in the Rails, app was to take the javascript script tag, and put it in the body of the html. Also I had to remove 'data-turbolinks-track':'reload'!!!!!
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
