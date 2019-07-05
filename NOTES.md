@@ -177,13 +177,22 @@ a#logo-link {
 // () - Anonymous Function
 const navSlide = () => {
   // Here we'll grab burger and slider (nav-links)
-    const burger = document.getElementsByClassName('.burger');
-    const nav = document.getElementsByClassName('.nav-links');
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    // Grab the individual links
+    const navLinks = document.querySelectorAll('.nav-links li')
 
-    // When we click on the menu, we want the berger to get the class of nav-active
+    // When we click on the menu, we want the berger to get the class of nav-active, and slide from out of view into view
     burger.addEventListener('click', () => {
       nav.classList.toggle('nav-active');
     });
+
+    // Animate links
+    navLinks.forEach(function(link, index) {
+      link.style.animation = 'navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s';
+      console.log(index / 7 + 0.2);
+    });
+
 }
 
 navSlide();
@@ -192,3 +201,54 @@ navSlide();
 !!!!! The only way to get the JavaScript to work, in the Rails, app was to take the javascript script tag, and put it in the body of the html. Also I had to remove 'data-turbolinks-track':'reload'!!!!!
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+// CSS
+@media screen and (max-width: 1024px){
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 760px){
+  body{
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 40%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+
+}
+
+// Annomation to have links slide @include
+@keyframes: navLinksFade{
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

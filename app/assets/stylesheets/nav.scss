@@ -43,27 +43,28 @@ nav{
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
-
 }
 
-// Hamburger Menu
 .burger {
   display: none;
 }
+
 .burger div {
   width: 25px;
   height: 3px;
   background-color: #ebeef2;
   margin: 5px;
+
 }
 
 @media screen and (max-width: 1024px){
-  .nav-links {
+  nav-links {
     width: 60%;
   }
+
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 768px){
   body{
     overflow-x: hidden;
   }
@@ -75,21 +76,34 @@ nav{
     background-color: lightgreen;
     display: flex;
     flex-direction: column;
-    align-items:center;
-    width: 40%;
+    align-items: center;
+    width: 50%;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+
   }
   .nav-links li {
-    opacity: 0;
+    // If you can't find the list, check this opacity
+    //opacity: 0;
   }
-  .burger {
+  .burger{
     display: block;
-    cursor: pointer;
   }
 }
 
+// Everthing looked good, up to this point
 .nav-active {
   transform: translateX(0%);
 
+}
+
+// Annomation to have links slide @include
+@keyframes: navLinkFade{
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
