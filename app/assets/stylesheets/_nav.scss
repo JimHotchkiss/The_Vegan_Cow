@@ -92,7 +92,6 @@ nav{
   }
 }
 
-// Everthing looked good, up to this point
 .nav-active {
   transform: translateX(0%);
 
@@ -108,4 +107,14 @@ nav{
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px,-6px);
 }
