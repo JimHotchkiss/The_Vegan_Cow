@@ -47,6 +47,7 @@ nav{
 
 .burger {
   display: none;
+  cursor: pointer;
 }
 
 .burger div {
@@ -79,11 +80,12 @@ nav{
     align-items: center;
     width: 50%;
     transform: translateX(100%);
+    transition: transform 0.9s ease-in;
 
   }
   .nav-links li {
     // If you can't find the list, check this opacity
-    //opacity: 0;
+    opacity: 0;
   }
   .burger{
     display: block;
@@ -97,7 +99,7 @@ nav{
 }
 
 // Annomation to have links slide @include
-@keyframes: navLinkFade{
+@keyframes navLinkFade{
   from {
     opacity: 0;
     transform: translateX(50px);
