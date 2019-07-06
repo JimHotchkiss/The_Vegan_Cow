@@ -24,37 +24,32 @@ h2 {
   margin: 0;
 }
 
-.img-css {
-  width: 900px;
-  height: 450px;
-  background-size: 900px;
+img {
+  display: block;
+  width: 100%;
 }
 
 #breakfast-img {
-  background-image: url("/assets/breakfast.jpg");
   margin-top: 10px;
-}
-
-#lunch-img {
-  background-image: url("/assets/lunch.jpg");
-}
-
-#dinner-img {
-  background-image: url("/assets/dinner.jpg");
-}
-
-#salad-img {
-  background-image: url("/assets/salads_sides.jpg");
-}
-
-#dessert-img {
-  background-image: url("/assets/desserts.jpg");
 }
 
 main {
   max-width: 900px;
   margin: auto;
   .caption {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    box-shadow: 30px 0px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
+  .caption h3 {
+    color: #FF0000;
+  }
+  .caption span {
+    color: #8B4513;
+  }
+}
+a {
+  text-decoration: none;
 }
