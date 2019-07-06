@@ -3,8 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'nav';
 
-.welcome_body {
-  background-color: lightpink;
-  margin: 5px;
-  padding: 5px;
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #eee;
+  height: auto;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.img-css {
+  width: 900px;
+  height: 450px;
+  background-size: 900px;
+}
+
+#breakfast-img {
+  background-image: url("/assets/breakfast.jpg");
+  margin-top: 10px;
+}
+
+#lunch-img {
+  background-image: url("/assets/lunch.jpg");
+}
+
+#dinner-img {
+  background-image: url("/assets/dinner.jpg");
+}
+
+#salad-img {
+  background-image: url("/assets/salads_sides.jpg");
+}
+
+#dessert-img {
+  background-image: url("/assets/desserts.jpg");
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  .caption {
+    margin-bottom: 10px;
+  }
 }

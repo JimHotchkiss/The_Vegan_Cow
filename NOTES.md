@@ -254,3 +254,8 @@ navSlide();
 }
 
 Good Youtube Video for response blog template: Responsive Grid Layout - Blog Posts Page Concept | HTML, CSS & JAVASCRIPT
+
+// Resources
+Unsplash:
+IsThisUsernameTaken
+UnSplash
