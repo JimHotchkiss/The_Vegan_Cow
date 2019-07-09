@@ -259,3 +259,5 @@ Good Youtube Video for response blog template: Responsive Grid Layout - Blog Pos
 Unsplash:
 IsThisUsernameTaken
 UnSplash
+
+// 'New Recipes'takes user to show page that shows recipes that are less than, say, two weeks old. 
