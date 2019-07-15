@@ -59,10 +59,13 @@ nav{
 }
 
 @media screen and (max-width: 1024px){
-  nav-links {
+  .nav-links {
     width: 60%;
   }
+}
 
+@media screen and (max-width: 940px){
+  
 }
 
 @media screen and (max-width: 768px){

@@ -260,4 +260,7 @@ Unsplash:
 IsThisUsernameTaken
 UnSplash
 
-// 'New Recipes'takes user to show page that shows recipes that are less than, say, two weeks old. 
+// 'New Recipes'takes user to show page that shows recipes that are less than, say, two weeks old.
+  Iterate over an array of new recipes, if array.length is greater than 1, print 'recipes' if .length is equal to 1 print 'recipe'
+
+  
