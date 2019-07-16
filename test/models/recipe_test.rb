@@ -1,7 +1,6 @@
-require 'test_helper'
+require 'test/test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  #recipe = Recipe.new
+  #assert_not recipe.save
 end
