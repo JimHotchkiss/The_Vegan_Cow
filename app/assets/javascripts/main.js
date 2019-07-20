@@ -4,7 +4,9 @@ const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     // Grab the individual links
-    const navLinks = document.querySelectorAll('.nav-links li')
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+
     // When we click on the menu, we want the berger to get the class of nav-active, and slide from out of view into view
     burger.addEventListener('click', () => {
       nav.classList.toggle('nav-active');
