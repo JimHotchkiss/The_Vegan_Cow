@@ -10,3 +10,4 @@
       * recipe_id:integer
     ~ Create test for Category
       * Category.new will equal a new Category
+  Note: Can't get test to run. Error: cannot load such file -- test_helper

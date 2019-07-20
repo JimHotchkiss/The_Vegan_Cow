@@ -45,6 +45,11 @@ nav{
   font-size: 14px;
 }
 
+.nav-links a:hover {
+  color: red;
+  transition: all 2s ease-out;
+}
+
 .burger {
   display: none;
   cursor: pointer;
