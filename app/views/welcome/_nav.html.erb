@@ -1,9 +1,9 @@
 <nav>
   <div class="logo">
-    <h4>The Vegan<span class="cow-color">Cow</span></h4>
+    <h4>The Vegan<span data-turbolinks="false"><%= link_to "Cow", root_path, :class => "cow-color" %></span></h4>
   </div>
 
-  <ul class="nav-links">
+  <ul data-turbolinks="false" class="nav-links">
     <li>
       <%= link_to "All Recipes", recipes_path %>
       <!-- <a href="#">All Recipes</a> -->
