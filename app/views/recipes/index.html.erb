@@ -1,17 +1,11 @@
 
 <%= render './welcome/nav' %>
 
-<ul class="recipe-list">
+<% @recipes.each do |recipe| %>
+<ul data-turbolinks="false" class="recipe-list">
   <div class="recipe-name-desc">
-    <li><%= link_to "Spinach Potpie" %></li>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo.</p>
-  </div>
-  <div class="recipe-name-desc">
-    <li><%= link_to "Zuccini Pizza" %></li>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo.</p>
-  </div>
-  <div class="recipe-name-desc">
-    <li><%= link_to "Lental Pasta Salad" %></li>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo.</p>
+    <li><%= link_to recipe.title, recipe_path(recipe) %></li>
+      <p><%= recipe.description%></p>
   </div>
 </ul>
+<%end%>

@@ -6,7 +6,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    debugger
+    # Adventually, put in helper method
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
