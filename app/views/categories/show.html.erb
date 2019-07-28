@@ -1,1 +1,8 @@
-hello world
+<%= render './welcome/nav' %>
+<% @category_recipes.each do |recipe|%>
+<div class="category-recipes">
+  <ul>
+    <li><%= recipe.title %></li>
+  </ul>
+</div>
+<%end%>
