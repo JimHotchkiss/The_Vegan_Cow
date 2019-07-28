@@ -35,7 +35,7 @@
   padding: 1em;
 }
 
-// This CSS is for the Recipe's Method - I haven't created the method in the db yet, and I don't really like the way the CSS looks 
+// This CSS is for the Recipe's Method - I haven't created the method in the db yet, and I don't really like the way the CSS looks
 
 .method  {
   text-align: left;
@@ -48,25 +48,7 @@
 }
 
 .li-background{
-  margin: .5em;
+  margin: .25em;
   padding: .5em 1em .5em 1em;
   background-color: lightgray;
 }
-ol {
-   list-style: none;
-   counter-reset: item;
- }
-  li {
-   counter-increment: item;
-   margin-bottom: 5px;
- }
- li:before {
-   margin-right: 10px;
-   content: counter(item);
-   background: red;
-   border-radius: 100%;
-   color: black;
-   width: 1.5em;
-   text-align: center;
-   display: inline-block;
- }
