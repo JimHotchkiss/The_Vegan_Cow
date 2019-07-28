@@ -1,8 +1,10 @@
 <%= render './welcome/nav' %>
 <% @category_recipes.each do |recipe|%>
-<div class="category-recipes">
-  <ul>
-    <li><%= recipe.title %></li>
-  </ul>
-</div>
+
+  <div class="category-recipes">
+    <ul>
+      <li data-turbolinks="false"><%= link_to recipe.title, recipe_path(recipe), :class => "category-recipes" %>
+      </li>
+    </ul>
+  </div>
 <%end%>
