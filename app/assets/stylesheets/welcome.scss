@@ -24,12 +24,16 @@ h2 {
   margin: 0;
 }
 
+.number-recipes{
+  color: red;
+}
+
 img {
   display: block;
   width: 100%;
 }
 
-#breakfast-img {
+#img-tag {
   margin-top: 10px;
 }
 
@@ -53,6 +57,7 @@ main {
 a {
   text-decoration: none;
 }
+
 
 // Media Query
 @media only screen and (max-width: 900px) {

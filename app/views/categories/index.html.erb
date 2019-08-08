@@ -3,21 +3,56 @@
 <main>
   <!-- Landing Area -->
   <!-- Categories -->
-<% @categories.each do |category|%>
-  <div class="img-css" id="breakfast-img"><img src="/assets/breakfast.jpg" alt="">
+<!-- <% @categories.each do |category|%>
+  <div class="img-css" id="img-tag"><img id="img-url" src="" alt="">
   </div>
     <div class="caption">
       <h3 data-turbolinks="false"><%= link_to category.name, category_path(category), :class => 'caption-text' %></h3>
-  <!--
-      <div class="new-recipe">
-        <h4>New Recipes</h4>
-      </div>
-    -->
       <div class="recipe-number">
         <p>Number of recipes: <%= category.recipes.size%></p>
       </div>
       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus expedita, aspernatur, iure quos deleniti vitae cupiditate sapiente illum eaque sed magni vel officia optio minus, blanditiis voluptates provident dolorum ullam!</span>
       </p>
     </div>
-<%end%>
+<%end%> -->
+<div class="img-css" id="img-tag"><img id="img-url" src="./assets/breakfast.jpg" alt="">
+</div>
+  <div class="caption">
+    <h3 data-turbolinks="false"><%= link_to Category.all[0].name, category_path(Category.all[0].id), :class => 'caption-text' %></h3>
+    <p> Number of recipes: <span class="number-recipes"><%= Category.all[0].recipes.length%></span></p>
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus expedita, aspernatur, iure quos deleniti vitae cupiditate sapiente illum eaque sed magni vel officia optio minus, blanditiis voluptates provident dolorum ullam!</span>
+    </p>
+  </div>
+  <div class="img-css" id="img-tag"><img id="img-url" src="./assets/lunch.jpg" alt="">
+  </div>
+  <div class="caption">
+    <h3 data-turbolinks="false"><%= link_to Category.all[1].name, category_path(Category.all[1].id), :class => 'caption-text' %></h3>
+    <p> Number of recipes: <span class="number-recipes"><%= Category.all[1].recipes.length%></span></p>
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus expedita, aspernatur, iure quos deleniti vitae cupiditate sapiente illum eaque sed magni vel officia optio minus, blanditiis voluptates provident dolorum ullam!</span>
+    </p>
+  </div>
+  <div class="img-css" id="img-tag"><img id="img-url" src="./assets/dinner.jpg" alt="">
+  </div>
+  <div class="caption">
+    <h3 data-turbolinks="false"><%= link_to Category.all[2].name, category_path(Category.all[2].id), :class => 'caption-text' %></h3>
+    <p> Number of recipes: <span class="number-recipes"><%= Category.all[2].recipes.length%></span></p>
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus expedita, aspernatur, iure quos deleniti vitae cupiditate sapiente illum eaque sed magni vel officia optio minus, blanditiis voluptates provident dolorum ullam!</span>
+    </p>
+  </div>
+  <div class="img-css" id="img-tag"><img id="img-url" src="./assets/salads_sides.jpg" alt="">
+  </div>
+  <div class="caption">
+    <h3 data-turbolinks="false"><%= link_to Category.all[3].name, category_path(Category.all[3].id), :class => 'caption-text' %></h3>
+    <p> Number of recipes: <span class="number-recipes"><%= Category.all[3].recipes.length%></span></p>
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus expedita, aspernatur, iure quos deleniti vitae cupiditate sapiente illum eaque sed magni vel officia optio minus, blanditiis voluptates provident dolorum ullam!</span>
+    </p>
+  </div>
+  <div class="img-css" id="img-tag"><img id="img-url" src="./assets/desserts.jpg" alt="">
+  </div>
+  <div class="caption">
+    <h3 data-turbolinks="false"><%= link_to Category.all[4].name, category_path(Category.all[4].id), :class => 'caption-text' %></h3>
+    <p> Number of recipes: <span class="number-recipes"><%= Category.all[4].recipes.length%></span></p>
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus expedita, aspernatur, iure quos deleniti vitae cupiditate sapiente illum eaque sed magni vel officia optio minus, blanditiis voluptates provident dolorum ullam!</span>
+    </p>
+  </div>
 </main>
