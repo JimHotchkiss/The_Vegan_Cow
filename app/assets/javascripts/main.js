@@ -1,13 +1,3 @@
-// Load images
-//const imgUrl = ["breakfast.jpg", "lunch.jpg", "dinner.jpg", "salads_sides.jpg", "desserts.jpg"]
-//function loadImages(){
-//  imgUrl.forEach(function(url){
-//    newImg = new Image()
-//    newImg.src = `assets/${url}`
-//    document.getElementById("img-tag").appendChild(newImg)
-//  })
-//}
-
 // () - Anonymous Function
 const navSlide = () => {
   // Here we'll grab burger and slider (nav-links)
