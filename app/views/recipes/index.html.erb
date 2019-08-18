@@ -2,7 +2,7 @@
 <%= render './welcome/nav' %>
 
 <% @recipes.each do |recipe| %>
-<ul data-turbolinks="false" class="recipe-list">
+<ul class="recipe-list">
   <div class="recipe-name-desc">
     <li><%= link_to recipe.title, recipe_path(recipe) %></li>
       <p><%= recipe.description%></p>
