@@ -1,0 +1,19 @@
+.method  {
+  text-align: left;
+  padding: 1em;
+  margin: 1em;
+}
+
+.method li {
+  margin: .7em;
+}
+
+.li-background{
+  margin: .25em;
+  padding: .5em 1em .5em 1em;
+  background-color: #F8F9F9  ;
+}
+
+.li-background:nth-of-type(2n) {
+  background-color: #EAEDED;
+}
