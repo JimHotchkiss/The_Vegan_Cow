@@ -13,8 +13,13 @@
 
 
 
-# categories = Category.create([{name: 'Breakfast'},{name: 'Lunch'}, {name: 'Dinner'}, {name: 'Salad and Sides'}, {name: 'Desserts'}])
+categories = Category.create([{name: 'Breakfast'},{name: 'Lunch'}, {name: 'Dinner'}, {name: 'Salad and Sides'}, {name: 'Desserts'}])
 
 # recipes = Recipe.create([{title: 'Kale Scramble', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo', category_id: 4}, {title: 'Quinoa', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo', category_id: 5}, {title: 'No Milk Ice Cream', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo', category_id: 6}])
-
-recipes = Recipe.create([{title: 'No Milk Ice Cream', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni fuga, inventore nihil totam nobis saepe corporis deserunt, sapiente molestiae dignissimos blanditiis eum. Officia at, nemo repellat magni deserunt dicta explicabo', category_id: 5}])
+50.times do
+  Recipe.create(
+    title: Faker::Food.dish,
+    instructions: Faker::Food.description,
+    category_id: Faker::Number.between(from: 1, to: 5)
+  )
+end 
