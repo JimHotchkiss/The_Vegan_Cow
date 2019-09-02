@@ -20,6 +20,7 @@ categories = Category.create([{name: 'Breakfast'},{name: 'Lunch'}, {name: 'Dinne
   Recipe.create(
     title: Faker::Food.dish,
     instructions: Faker::Food.description,
+    description: Faker::Food.description,
     category_id: Faker::Number.between(from: 1, to: 5)
   )
-end 
+end
