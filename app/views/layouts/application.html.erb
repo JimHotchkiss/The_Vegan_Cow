@@ -11,7 +11,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render './welcome/nav' %>
+    <div id="app-container">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag 'application' %>
 
   </body>
