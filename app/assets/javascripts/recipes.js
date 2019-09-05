@@ -26,6 +26,7 @@ const clickHandlers = () => {
 
 // JavaScript Object Model
 function Recipe(recipe) {
+  debugger
   this.id = recipe.id
   this.title = recipe.title
   this.description = recipe.description
@@ -35,7 +36,10 @@ function Recipe(recipe) {
 
 // Recipe prototype
 Recipe.prototype.formatIndex = function(){
-  let recipeHTML = `<a href = "#"><h3>${this.title}</h3></a>`
-
+  let recipeHTML = `
+    <div class = "indexJSON">
+      <p><a href = "#" class = "indexTitle">${this.title}</a></p>
+      <p>${this.description}</p>
+    </div>`
   return recipeHTML
 }

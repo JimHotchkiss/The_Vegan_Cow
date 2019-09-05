@@ -34,5 +34,15 @@
   text-align: center;
   padding: 1em;
 }
+.indexJSON {
+  margin: 0 auto;
+  max-width: 500px;
+  width: auto;
+  text-align: center;
+  line-height: 200%;
+}
+.indexTitle {
+  color: red;
+}
 
 // This CSS is for the Recipe's Method - I haven't created the method in the db yet, and I don't really like the way the CSS looks
