@@ -1,9 +1,11 @@
 // Document ready function
 $(() => {
-  clickHandlers();
+  //clickHandlers();
+  recipeIndex();
+  recipeShow();
 });
 
-const clickHandlers = () => {
+const recipeIndex = () => {
   $('#recipe-index').on('click', (event) => {
     event.preventDefault();
     // Lets update the url to /recipes
@@ -24,7 +26,10 @@ const clickHandlers = () => {
         })
       })
   })
-  // Lets grab the recipe show recipeLink
+}
+
+const recipeShow = () => {
+// Lets grab the recipe show recipeLink
   $(document).on('click', '.recipe-link', function(event) {
     event.preventDefault();
     let id = this.dataset.id;
@@ -34,7 +39,6 @@ const clickHandlers = () => {
       .then(recipe => {
         $('#app-container').html("")
         let newRecipe = new Recipe(recipe)
-        // show recipe prototype
         let showRecipe = newRecipe.showRecipe()
         $('#app-container').append(showRecipe)
       })
@@ -62,9 +66,8 @@ Recipe.prototype.formatIndex = function(){
 Recipe.prototype.showRecipe = function(){
   let showRecipe = `
     <div class = "show-recipe">
-      <h3 id = "show-title">${this.title}</h3>
+      <p id = "show-title">${this.title}</p>
       <p>${this.instructions}</p>
     </div>`
   return showRecipe
-
 }
