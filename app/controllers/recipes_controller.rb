@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-
+  before_action :set_recipe
   def index
     @recipes = Recipe.all
     respond_to do |f|
@@ -9,8 +9,10 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # Adventually, put in helper method
-    @recipe = Recipe.find(params[:id])
+    respond_to do |f|
+      f.html
+      f.json {render json: @recipe}
+    end
   end
 
   def new
@@ -21,4 +23,10 @@ class RecipesController < ApplicationController
 
   def delete
   end
+
+  protected
+
+    def set_recipe
+      @recipe = Recipe.find_by_id(params[:id])
+    end
 end
