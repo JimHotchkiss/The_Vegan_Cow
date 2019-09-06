@@ -10,20 +10,25 @@ const recipeIndex = () => {
     event.preventDefault();
     // Lets update the url to /recipes
     history.pushState(null, null, '/recipes');
-    // Now lets get the data through the Fetch API
-    fetch('/recipes.json')
-      .then(response => response.json())
-      .then(recipes => {
-        // lets clear the app-container
-        $('#app-container').html("")
-        recipes.forEach(recipe => {
-          // Lets build an Object Model
-          let newRecipe = new Recipe(recipe)
-          // Lets call our prototype
-          let recipeHTML = newRecipe.formatIndex()
-          // Lets append the DOM
-          $('#app-container').append(recipeHTML)
-        })
+    //call getRecipes() method
+    getRecipes();
+  })
+}
+
+const getRecipes = () => {
+  fetch('/recipes.json')
+    .then(response => response.json())
+    .then(recipes => {
+      // lets clear the app-container
+      // # Could be another function
+      $('#app-container').html("")
+      recipes.forEach(recipe => {
+        // Lets build an Object Model
+        let newRecipe = new Recipe(recipe)
+        // Lets call our prototype
+        let recipeHTML = newRecipe.formatIndex()
+        // Lets append the DOM
+        $('#app-container').append(recipeHTML)
       })
   })
 }
@@ -34,15 +39,25 @@ const recipeShow = () => {
     event.preventDefault();
     let id = this.dataset.id;
     history.pushState(null, null, `/recipes/${id}`);
-    fetch(`/recipes/${id}.json`)
-      .then(response => response.json())
-      .then(recipe => {
-        $('#app-container').html("")
-        let newRecipe = new Recipe(recipe)
-        let showRecipe = newRecipe.showRecipe()
-        $('#app-container').append(showRecipe)
-      })
+    showRecipe(id);
   })
+}
+
+// show recipe
+const showRecipe = (id) => {
+  fetch(`/recipes/${id}.json`)
+    .then(response => response.json())
+    .then(recipe => {
+      formatShow(recipe);
+    })
+}
+
+// Format show recipe
+const formatShow = (recipe) => {
+  $('#app-container').html("")
+  let newRecipe = new Recipe(recipe)
+  let showRecipe = newRecipe.showRecipe()
+  $('#app-container').append(showRecipe)
 }
 
 // JavaScript Object Model
@@ -54,7 +69,7 @@ function Recipe(recipe) {
   this.category = recipe.category
 }
 
-// Recipe prototype
+// Recipe Index prototype
 Recipe.prototype.formatIndex = function(){
   let recipeHTML = `
     <div class = "indexJSON">
@@ -63,6 +78,7 @@ Recipe.prototype.formatIndex = function(){
     </div>`
   return recipeHTML
 }
+// Recipe Show prototype
 Recipe.prototype.showRecipe = function(){
   let showRecipe = `
     <div class = "show-recipe">
