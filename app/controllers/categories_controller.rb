@@ -9,8 +9,11 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    # Make helper_method to do this
-    @category_recipes = Category.find(params[:id]).recipes
+    @category_recipes = Category.find(params[:id])
+    respond_to do |f|
+      f.html
+      f.json {render json: @category_recipes}
+    end
   end
 
 

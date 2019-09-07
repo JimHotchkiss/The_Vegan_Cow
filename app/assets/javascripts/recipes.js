@@ -2,7 +2,7 @@
 $(() => {
   //clickHandlers();
   recipeIndex();
-  recipeShow();
+  getRecipeShow();
 });
 
 const recipeIndex = () => {
@@ -33,7 +33,7 @@ const getRecipes = () => {
   })
 }
 
-const recipeShow = () => {
+const getRecipeShow = () => {
 // Lets grab the recipe show recipeLink
   $(document).on('click', '.recipe-link', function(event) {
     event.preventDefault();
