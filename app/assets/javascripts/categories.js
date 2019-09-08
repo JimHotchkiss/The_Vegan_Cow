@@ -46,7 +46,7 @@ function CategoryRecipe(categoryRecipe) {
 CategoryRecipe.prototype.showCategoryRecipe = function(){
   let showCategoryRecipe = `
     <div class = "show-category-recipe">
-      <h3 id = "show-recipe-title">${this.title}</h3>
+      <h3 id = "show-recipe-title"><a href = "/recipes/${this.id}" data-id="${this.id}" class = "recipe-link">${this.title}</a></h3>
       <p>${this.description}</p>
     </div>`
   return showCategoryRecipe
