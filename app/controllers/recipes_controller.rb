@@ -16,6 +16,18 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
+    @categories = Category.all
+  end
+
+  def create
+    @recipe = Recipe.new
+    @recipe.title = params["title"]
+    @recipe.description = params["description"]
+    @recipe.instructions = params["instructions"]
+    @recipe.category_id = params["category"].to_i
+
+    debugger
   end
 
   def update

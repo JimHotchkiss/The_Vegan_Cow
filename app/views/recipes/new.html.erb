@@ -1,20 +1,39 @@
-<h3 class="new-title">New Recipe</h3>
-
 <div class="new-div">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  <h3 class="new-title">New Recipe</h3>
+  <form action="<%= recipes_path %>" method = "POST">
+    <label for="title">Recipe Title</label>
+    <input type="text" id="fname" name="recipe[title]" placeholder="Recipe title..">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="descriptions">Description</label>
+    <input type="text" size = "30" id="lname" name="recipe[description]" placeholder="Recipe description..">
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
+    <label for="instructions">Instructions</label>
+    <input type="text" size = "30" id="lname" name="recipe[instructions]" placeholder="Recipe instructions..">
+
+    <label for="category">Category</label>
+    <select id="category" name="category">
+      <option id="category-placeholder">Category</option>
+      <% @categories.each do |category|%>
+       <option value="<%= category.id%>" ><%= category.name%></option>
+      <% end %>
     </select>
-
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="submit" value="Submit">
   </form>
+</div>
+
+<div class="new-div">
+  <h3 class="new-title">New Recipe</h3>
+  <%= form_tag recipes_path do %>
+  <label>Recipe title:</label><br>
+  <%= text_field_tag :'recipe[title]' %><br>
+
+  <label>Recipe description:</label><br>
+  <%= text_area_tag :'recipe[description]' %><br>
+
+  <label>Recipe instructions:</label><br>
+  <%= text_area_tag :'recipe[instructions]' %><br>
+
+  <%= submit_tag "Submit Recipe" %>
+<% end %>
 </div>
