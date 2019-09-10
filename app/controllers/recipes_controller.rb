@@ -21,13 +21,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new
-    @recipe.title = params["title"]
-    @recipe.description = params["description"]
-    @recipe.instructions = params["instructions"]
-    @recipe.category_id = params["category"].to_i
-
-    debugger
+    @recipe = Recipe.create(recipe_params)
+      if @recipe
+        render json: @recipe, status: 201
+      else
+        render :action => :new
+      end
   end
 
   def update
@@ -35,6 +34,12 @@ class RecipesController < ApplicationController
 
   def delete
   end
+
+  private
+
+    def recipe_params
+      params.require(:recipe).permit(:title, :description, :instructions, :category_id)
+    end
 
   protected
 
