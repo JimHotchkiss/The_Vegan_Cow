@@ -20,7 +20,6 @@ const getRecipes = () => {
     .then(response => response.json())
     .then(recipes => {
       // lets clear the app-container
-      // # Could be another function
       $('#app-container').html("")
       recipes.forEach(recipe => {
         // Lets build an Object Model

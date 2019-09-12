@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     respond_to do |f|
-      f.html
+      #f.html
       f.json {render json: @recipes}
     end
   end

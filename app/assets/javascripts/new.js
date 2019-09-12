@@ -8,16 +8,16 @@ const submitButton = () => {
   $('form').submit(function(event) {
     event.preventDefault();
 
-    let values = $(this).serialize();
+    let data = $(this).serialize();
 
-    let recipe_posting = $.post('/recipes', values);
+    let recipe_posting = $.post('/recipes', data);
 
     recipe_posting.done(function(recipe) {
       $('#app-container').html("");
       let id = recipe.id
+      history.pushState(null, null, `/recipes/${id}`);
       let newRecipe = new Recipe(recipe)
       let showRecipe = newRecipe.showRecipe()
-      history.pushState(null, null, `/recipes/${id}`);
       $('#app-container').append(showRecipe)
     })
   })
