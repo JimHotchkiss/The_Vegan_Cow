@@ -1,24 +1,10 @@
-# README
+# Description
+This is a recipe application. The user can see recipes by category, and they can see all of the recipes offered. The user can also add a recipe to the application.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Instructions
+  * Fork and clone repo
+  * Run custom rake file `rake dcms`
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Licensing Statement
+  * This project has been licensed under the MIT open source license.
