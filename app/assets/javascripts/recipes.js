@@ -8,7 +8,7 @@ $(() => {
 const recipeIndex = () => {
   $('#recipe-index').on('click', (event) => {
     event.preventDefault();
-    // Lets update the url to /recipes
+    // Lets update the browser history to /recipes
     history.pushState(null, null, '/recipes');
     //call getRecipes() method
     getRecipes();

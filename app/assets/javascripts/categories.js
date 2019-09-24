@@ -6,9 +6,11 @@ $(() => {
 
 const categoryRecipesShow = () => {
   $(document).on('click', '.caption-text', function(event) {
+//console.log(event)
     event.preventDefault();
     let id = this.dataset.id
-    history.pushState(null, null, `/categories/${id}`);
+//console.log(this)
+    history.pushState(null, null, `/categories/${id}`); // adds a state to the browsers history
     getCategoryRecipes(id);
   })
 }
@@ -16,14 +18,14 @@ const categoryRecipesShow = () => {
 // getCategory()
 const getCategoryRecipes = (id) => {
   fetch(`/categories/${id}.json`)
-  .then(response => (response.json()))
+  .then(response => response.json())
   .then(categoryRecipes => {
     let categoryRecipesArray = categoryRecipes.recipes
     showCategoryRecipes(categoryRecipesArray);
   })
 }
 
-// showCategoryRecipes
+// showCategoryRecipes()
 const showCategoryRecipes = (categoryRecipesArray) => {
   $('#app-container').html("")
   categoryRecipesArray.forEach(categoryRecipe => {
@@ -44,6 +46,7 @@ function CategoryRecipe(categoryRecipe) {
 
 // Recipe Show prototype
 CategoryRecipe.prototype.showCategoryRecipe = function(){
+  console.log('this equals', this)
   let showCategoryRecipe = `
     <div class = "show-category-recipe">
       <h3 id = "show-recipe-title"><a href = "/recipes/${this.id}" data-id="${this.id}" class = "recipe-link">${this.title}</a></h3>
