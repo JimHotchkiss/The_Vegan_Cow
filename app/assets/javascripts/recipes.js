@@ -3,12 +3,12 @@ $(() => {
   //clickHandlers();
   recipeIndex();
   getRecipeShow();
+  sortButton();
 });
 
 const recipeIndex = () => {
   $('#recipe-index').on('click', (event) => {
     event.preventDefault();
-    // Lets update the browser history to /recipes
     history.pushState(null, null, '/recipes');
     //call getRecipes() method
     getRecipes();
@@ -29,7 +29,7 @@ const getRecipes = () => {
         // Lets append the DOM
         $('#app-container').append(recipeHTML)
       })
-  })
+    })
 }
 
 const getRecipeShow = () => {
@@ -57,6 +57,38 @@ const formatShow = (recipe) => {
   let newRecipe = new Recipe(recipe)
   let showRecipe = newRecipe.showRecipe()
   $('#app-container').append(showRecipe)
+}
+
+// sort button
+const sortButton = () => {
+  $('#sort-recipes').on('click', () => {
+    fetch('/recipes.json')
+    .then(response => response.json())
+    .then(recipes => {
+      recipes.sort(function(a,b) {
+        let nameA = a.title.toUpperCase(); // ignore upper and lowercase
+        let nameB = b.title.toUpperCase(); // ignore upper and lowercase
+         if (nameA < nameB) {
+           //console.log(nameA, nameB)
+            return -1;
+            } if (nameA > nameB) {
+               return 1;
+             }
+         // names must be equal
+         return 0
+      });
+      $('#app-container').html("")
+      showSort(recipes);
+    });
+  });
+};
+
+const showSort = (recipes) => {
+  let app_container = $('#app-container');
+  //let sort_div = app_container.append('<div class = "sort-class"></div>');
+  recipes.forEach(recipe => {
+    app_container.append("<li class = 'js-list'>" + recipe.title + "</li>")
+  })
 }
 
 // JavaScript Object Model

@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe
+
   def index
     @recipes = Recipe.all
     respond_to do |f|

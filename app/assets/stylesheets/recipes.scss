@@ -55,4 +55,19 @@
   color:red;
 }
 
+#sort-recipes {
+  width: 100%;
+  height: 25px;
+  background: #DCDCDC;
+}
+
+.js-list  {
+  margin: auto;
+  width: 15%;
+  margin: 0 auto;
+  padding: 1em;
+  list-style: none;
+
+}
+
 // This CSS is for the Recipe's Method - I haven't created the method in the db yet, and I don't really like the way the CSS looks

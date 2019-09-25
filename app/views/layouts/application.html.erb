@@ -13,7 +13,9 @@
   <body>
     <%= render './welcome/nav' %>
     <div id="app-container">
-      <%= yield %>
+      <div id="sort-container">
+            <%= yield %>
+      </div>
     </div>
     <%= javascript_include_tag 'application' %>
 

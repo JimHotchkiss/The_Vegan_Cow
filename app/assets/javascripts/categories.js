@@ -6,11 +6,9 @@ $(() => {
 
 const categoryRecipesShow = () => {
   $(document).on('click', '.caption-text', function(event) {
-//console.log(event)
     event.preventDefault();
     let id = this.dataset.id
-//console.log(this)
-    history.pushState(null, null, `/categories/${id}`); // adds a state to the browsers history
+    history.pushState(null, null, `/categories/${id}`); 
     getCategoryRecipes(id);
   })
 }
@@ -46,7 +44,6 @@ function CategoryRecipe(categoryRecipe) {
 
 // Recipe Show prototype
 CategoryRecipe.prototype.showCategoryRecipe = function(){
-  console.log('this equals', this)
   let showCategoryRecipe = `
     <div class = "show-category-recipe">
       <h3 id = "show-recipe-title"><a href = "/recipes/${this.id}" data-id="${this.id}" class = "recipe-link">${this.title}</a></h3>
