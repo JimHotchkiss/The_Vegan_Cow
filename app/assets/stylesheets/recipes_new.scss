@@ -1,4 +1,5 @@
-input[type=text], select {
+input[type="text"],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -7,10 +8,9 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
   height: 50px;
-
 }
 
-input[type=submit] {
+input[type="submit"] {
   width: 100%;
   background-color: lightgreen;
   color: red;
@@ -21,17 +21,17 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: lightblue;
   color: brown;
 }
 
 div.new-div {
   max-width: 650px;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 50px;
   border-radius: 5px;
-  background-color: #8B4513;
+  // background-color: #8B4513;
   padding: 20px;
 }
 

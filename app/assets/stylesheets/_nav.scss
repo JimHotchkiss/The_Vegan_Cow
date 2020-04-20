@@ -4,27 +4,25 @@
   box-sizing: border-box;
 }
 
-
-nav{
-  display:flex;
+nav {
+  display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
   background-color: lightgreen;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 10px 10px;
-
 }
 
 .logo {
-  color: 	#FF0000;
+  color: #ff0000;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
 }
 
 .cow-color {
-  color: 	#8B4513;
+  color: #8b4513;
 }
 
 .cow-color:hover {
@@ -33,7 +31,7 @@ nav{
 }
 
 .nav-links {
-  display:flex;
+  display: flex;
   justify-content: space-around;
   width: 40%;
 }
@@ -43,7 +41,7 @@ nav{
 }
 
 .nav-links a {
-  color: #ebeef2;
+  color: red;
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
@@ -51,7 +49,7 @@ nav{
 }
 
 .nav-links a:hover {
-  color: red;
+  color: #8b4513;
   transition: all 2s ease-out;
 }
 
@@ -65,21 +63,19 @@ nav{
   height: 3px;
   background-color: #ebeef2;
   margin: 5px;
-
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .nav-links {
     width: 60%;
   }
 }
 
-@media screen and (max-width: 940px){
-
+@media screen and (max-width: 940px) {
 }
 
-@media screen and (max-width: 768px){
-  body{
+@media screen and (max-width: 768px) {
+  body {
     overflow-x: hidden;
   }
   .nav-links {
@@ -97,23 +93,22 @@ nav{
   }
 
   .nav-links a {
-    color: #FF0000;
+    color: #ff0000;
   }
   .nav-links li {
     opacity: 0;
   }
-  .burger{
+  .burger {
     display: block;
   }
 }
 
 .nav-active {
   transform: translateX(0%);
-
 }
 
 // Annomation to have links slide @include
-@keyframes navLinkFade{
+@keyframes navLinkFade {
   from {
     opacity: 0;
     transform: translateX(50px);
@@ -125,11 +120,11 @@ nav{
 }
 
 .toggle .line1 {
-  transform: rotate(-45deg) translate(-5px,6px);
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 .toggle .line2 {
   opacity: 0;
 }
 .toggle .line3 {
-  transform: rotate(45deg) translate(-5px,-6px);
+  transform: rotate(45deg) translate(-5px, -6px);
 }
