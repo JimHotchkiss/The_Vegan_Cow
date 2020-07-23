@@ -107,6 +107,12 @@ nav {
   transform: translateX(0%);
 }
 
+@media screen and (max-width: 414px) {
+  .logo h4 {
+    font-size: 30px;
+  }
+}
+
 // Annomation to have links slide @include
 @keyframes navLinkFade {
   from {
