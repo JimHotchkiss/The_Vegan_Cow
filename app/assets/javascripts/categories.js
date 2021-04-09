@@ -1,36 +1,36 @@
 // Document ready function
 $(() => {
   //clickHandlers();
-  categoryRecipesShow();
-});
+  categoryRecipesShow()
+})
 
 const categoryRecipesShow = () => {
-  $(document).on('click', '.caption-text', function(event) {
-    event.preventDefault();
+  $(document).on("click", ".caption-text", function (event) {
+    event.preventDefault()
     let id = this.dataset.id
-    history.pushState(null, null, `/categories/${id}`); 
-    getCategoryRecipes(id);
+    history.pushState(null, null, `/categories/${id}`)
+    getCategoryRecipes(id)
   })
 }
 
 // getCategory()
 const getCategoryRecipes = (id) => {
   fetch(`/categories/${id}.json`)
-  .then(response => response.json())
-  .then(categoryRecipes => {
-    let categoryRecipesArray = categoryRecipes.recipes
-    showCategoryRecipes(categoryRecipesArray);
-  })
+    .then((response) => response.json())
+    .then((categoryRecipes) => {
+      let categoryRecipesArray = categoryRecipes.recipes
+      showCategoryRecipes(categoryRecipesArray)
+    })
 }
 
 // showCategoryRecipes()
 const showCategoryRecipes = (categoryRecipesArray) => {
-  $('#app-container').html("")
-  categoryRecipesArray.forEach(categoryRecipe => {
+  $("#app-container").html("")
+  categoryRecipesArray.forEach((categoryRecipe) => {
     // Create Object Model
     let newCategoryRecipe = new CategoryRecipe(categoryRecipe)
     let showCatRecipe = newCategoryRecipe.showCategoryRecipe()
-    $('#app-container').append(showCatRecipe)
+    $("#app-container").append(showCatRecipe)
   })
 }
 
@@ -43,7 +43,8 @@ function CategoryRecipe(categoryRecipe) {
 }
 
 // Recipe Show prototype
-CategoryRecipe.prototype.showCategoryRecipe = function(){
+CategoryRecipe.prototype.showCategoryRecipe = function () {
+  window.scroll({ top: 0, left: 0, behavior: "smooth" })
   let showCategoryRecipe = `
     <div class = "show-category-recipe">
       <h3 id = "show-recipe-title"><a href = "/recipes/${this.id}" data-id="${this.id}" class = "recipe-link">${this.title}</a></h3>

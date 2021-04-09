@@ -1,92 +1,111 @@
 // Document ready function
 $(() => {
   //clickHandlers();
-  recipeIndex();
-  getRecipeShow();
-  sortButton();
-});
+  recipeIndex()
+  getRecipeShow()
+  sortButton()
+})
 
 const recipeIndex = () => {
-  $('#recipe-index').on('click', (event) => {
-    event.preventDefault();
-    history.pushState(null, null, '/recipes');
+  $("#recipe-index").on("click", (event) => {
+    event.preventDefault()
+    history.pushState(null, null, "/recipes")
     //call getRecipes() method
-    getRecipes();
+    getRecipes()
+    closeSideBar()
   })
 }
 
+const closeSideBar = () => {
+  const nav = document.querySelector(".nav-links")
+  const navLinks = document.querySelectorAll(".nav-links li")
+  const burger = document.querySelector(".burger")
+  nav.classList.toggle("nav-active")
+  navLinks.forEach((link, index) => {
+    if (link.style.animation) {
+      link.style.animation = ""
+    } else {
+      link.style.animation = `navLinkFade 0.3s ease forwards ${
+        index / 7 + 0.7
+      }s`
+    }
+  })
+  burger.classList.toggle("toggle")
+}
+
 const getRecipes = () => {
-  fetch('/recipes.json')
-    .then(response => response.json())
-    .then(recipes => {
+  fetch("/recipes.json")
+    .then((response) => response.json())
+    .then((recipes) => {
       // lets clear the app-container
-      $('#app-container').html("")
-      recipes.forEach(recipe => {
+      $("#app-container").html("")
+      recipes.forEach((recipe) => {
         // Lets build an Object Model
         let newRecipe = new Recipe(recipe)
         // Lets call our prototype
         let recipeHTML = newRecipe.formatIndex()
         // Lets append the DOM
-        $('#app-container').append(recipeHTML)
+        $("#app-container").append(recipeHTML)
       })
     })
 }
 
 const getRecipeShow = () => {
-// Lets grab the recipe show recipeLink
-  $(document).on('click', '.recipe-link', function(event) {
-    event.preventDefault();
-    let id = this.dataset.id;
-    history.pushState(null, null, `/recipes/${id}`);
-    showRecipe(id);
+  // Lets grab the recipe show recipeLink
+  $(document).on("click", ".recipe-link", function (event) {
+    event.preventDefault()
+    let id = this.dataset.id
+    history.pushState(null, null, `/recipes/${id}`)
+    showRecipe(id)
   })
 }
 
 // show recipe
 const showRecipe = (id) => {
   fetch(`/recipes/${id}.json`)
-    .then(response => response.json())
-    .then(recipe => {
-      formatShow(recipe);
+    .then((response) => response.json())
+    .then((recipe) => {
+      formatShow(recipe)
     })
 }
 
 // Format show recipe
 const formatShow = (recipe) => {
-  $('#app-container').html("")
+  $("#app-container").html("")
   let newRecipe = new Recipe(recipe)
   let showRecipe = newRecipe.showRecipe()
-  $('#app-container').append(showRecipe)
+  $("#app-container").append(showRecipe)
 }
 
 // sort button
 const sortButton = () => {
-  $('#sort-recipes').on('click', () => {
-    fetch('/recipes.json')
-    .then(response => response.json())
-    .then(recipes => {
-      recipes.sort(function(a,b) {
-        let nameA = a.title.toUpperCase(); // ignore upper and lowercase
-        let nameB = b.title.toUpperCase(); // ignore upper and lowercase
-         if (nameA < nameB) {
-           //console.log(nameA, nameB)
-            return -1;
-            } if (nameA > nameB) {
-               return 1;
-             }
-         // names must be equal
-         return 0
-      });
-      $('#app-container').html("")
-      showSort(recipes);
-    });
-  });
-};
+  $("#sort-recipes").on("click", () => {
+    fetch("/recipes.json")
+      .then((response) => response.json())
+      .then((recipes) => {
+        recipes.sort(function (a, b) {
+          let nameA = a.title.toUpperCase() // ignore upper and lowercase
+          let nameB = b.title.toUpperCase() // ignore upper and lowercase
+          if (nameA < nameB) {
+            //console.log(nameA, nameB)
+            return -1
+          }
+          if (nameA > nameB) {
+            return 1
+          }
+          // names must be equal
+          return 0
+        })
+        $("#app-container").html("")
+        showSort(recipes)
+      })
+  })
+}
 
 const showSort = (recipes) => {
-  let app_container = $('#app-container');
+  let app_container = $("#app-container")
   //let sort_div = app_container.append('<div class = "sort-class"></div>');
-  recipes.forEach(recipe => {
+  recipes.forEach((recipe) => {
     app_container.append("<li class = 'js-list'>" + recipe.title + "</li>")
   })
 }
@@ -101,7 +120,7 @@ function Recipe(recipe) {
 }
 
 // Recipe Index prototype
-Recipe.prototype.formatIndex = function(){
+Recipe.prototype.formatIndex = function () {
   let recipeHTML = `
     <div class = "indexJSON">
       <p><a href = "/recipes/${this.id}" data-id="${this.id}" class = "recipe-link">${this.title}</a></p>
@@ -110,7 +129,7 @@ Recipe.prototype.formatIndex = function(){
   return recipeHTML
 }
 // Recipe Show prototype
-Recipe.prototype.showRecipe = function(){
+Recipe.prototype.showRecipe = function () {
   let showRecipe = `
     <div class = "show-recipe">
       <p id = "show-title">${this.title}</p>
