@@ -3,6 +3,7 @@ $(() => {
   //clickHandlers();
   recipeIndex()
   getRecipeShow()
+  deleteRecipeEventListener()
   sortButton()
 })
 
@@ -21,15 +22,6 @@ const closeSideBar = () => {
   const navLinks = document.querySelectorAll(".nav-links li")
   const burger = document.querySelector(".burger")
   nav.classList.toggle("nav-active")
-  navLinks.forEach((link, index) => {
-    if (link.style.animation) {
-      link.style.animation = ""
-    } else {
-      link.style.animation = `navLinkFade 0.3s ease forwards ${
-        index / 7 + 0.7
-      }s`
-    }
-  })
   burger.classList.toggle("toggle")
 }
 
@@ -49,6 +41,12 @@ const getRecipes = () => {
       })
     })
 }
+
+const deleteRecipeEventListener = () => {
+  const deleteButton = document.getElementById("delete-button")
+}
+
+const deleteRecipe = () => {}
 
 const getRecipeShow = () => {
   // Lets grab the recipe show recipeLink
@@ -132,8 +130,14 @@ Recipe.prototype.formatIndex = function () {
 Recipe.prototype.showRecipe = function () {
   let showRecipe = `
     <div class = "show-recipe">
-      <p id = "show-title">${this.title}</p>
-      <p>${this.instructions}</p>
+      <div>
+        <p id = "show-title">${this.title}</p>
+        <p>${this.instructions}</p>
+      </div>
+      <div id="delete-button" class="delete-button">
+        <p>Delete</p>
+      </div>
     </div>`
+  deleteRecipeEventListener()
   return showRecipe
 }
