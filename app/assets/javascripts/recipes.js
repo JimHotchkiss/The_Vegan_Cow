@@ -3,7 +3,6 @@ $(() => {
   //clickHandlers();
   recipeIndex()
   getRecipeShow()
-  deleteRecipeEventListener()
   sortButton()
 })
 
@@ -44,6 +43,7 @@ const getRecipes = () => {
 
 const deleteRecipeEventListener = () => {
   const deleteButton = document.getElementById("delete-button")
+  console.log(deleteButton)
 }
 
 const deleteRecipe = () => {}
@@ -129,15 +129,11 @@ Recipe.prototype.formatIndex = function () {
 // Recipe Show prototype
 Recipe.prototype.showRecipe = function () {
   let showRecipe = `
-    <div class = "show-recipe">
+    <div class = "show-recipe" name="show-recipe">
       <div>
         <p id = "show-title">${this.title}</p>
         <p>${this.instructions}</p>
       </div>
-      <div id="delete-button" class="delete-button">
-        <p>Delete</p>
-      </div>
     </div>`
-  deleteRecipeEventListener()
   return showRecipe
 }
